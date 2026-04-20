@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation | Aura Dynamics</title>
+    <style>
+        :root {
+            /* Updated Colors: Teal replaced with Red */
+            --primary-red: #ff0505; 
+            --accent-red: #ff0905;
+            --bg-white: #ffffff;
+            --text-dark: #202124;
+            --light-gray: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: var(--bg-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { color: var(--text-dark); text-decoration: none; font-weight: 600; }
+        nav ul li a:hover { color: var(--primary-red); }
+
+        /* --- ANIMATIONS --- */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes imageReveal {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0 0 0); }
+        }
+
+        /* --- INNOVATION CONTENT --- */
+        .innovation-container {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideInUp 1s ease-out forwards;
+        }
+
+        .intro-section h1 {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        /* Grid for Content & Image */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .text-block {
+            opacity: 0;
+            animation: slideInUp 1s ease-out 0.3s forwards;
+        }
+
+        .text-block h2 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 15px;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 400px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: imageReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%) contrast(1.1);
+        }
+
+        /* Staggered text sections */
+        .extra-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary-red);
+            opacity: 0;
+            animation: slideInUp 1s ease-out forwards;
+        }
+
+        .feature-box h2 { color: var(--primary-red); margin-bottom: 10px; }
+
+        .feature-box:nth-child(1) { animation-delay: 0.6s; }
+        .feature-box:nth-child(2) { animation-delay: 0.8s; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-red);
+            color: white;
+            padding: 40px 10%;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid, .extra-content { grid-template-columns: 1fr; }
+            .image-wrapper { height: 250px; order: -1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">AURA DYNAMICS</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" style="color: var(--primary-red)">Innovation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="innovation-container">
+        <div class="intro-section">
+            <h1>Mini-Business Innovation</h1>
+            <p>Blending creativity, adaptability, and technology to power modern markets.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="text-block">
+                <h2>The Power of Pivot</h2>
+                <p>
+                    Mini businesses innovate by remaining competitive in fast-changing markets. They often start with product innovation, introducing unique goods or services that directly respond to customer needs. 
+                </p>
+                <br>
+                <p>
+                    For example, a small food business might experiment with healthier recipes or eco-friendly packaging to attract environmentally conscious buyers.
+                </p>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1000" alt="Innovation Scene">
+            </div>
+        </div>
+
+        <div class="extra-content">
+            <div class="feature-box">
+                <h2>Process & Digital Tools</h2>
+                <p>Beyond products, they focus on process innovation by streamlining operations through digital tools, automation, and efficient supply chains. This allows them to cut costs and deliver faster results.</p>
+            </div>
+            <div class="feature-box">
+                <h2>Marketing & Connection</h2>
+                <p>They excel in marketing innovation, using social media and storytelling to build direct engagement. Unlike large corporations, these businesses pivot quickly without heavy bureaucracy.</p>
+            </div>
+        </div>
+
+        <div class="text-block" style="margin-top: 60px; animation-delay: 1s;">
+            <p>Innovation also plays a crucial role in resilience—helping them survive economic challenges, stand out in crowded markets, and grow sustainably. By combining creativity with smart use of technology, mini businesses transform small beginnings into powerful engines of community impact.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aura Dynamics | Innovation Division</p>
+    </footer>
+
+</body>
+</html>
